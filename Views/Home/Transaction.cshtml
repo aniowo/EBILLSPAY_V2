@@ -1,0 +1,291 @@
+﻿@model PostTransaction
+
+
+<form method="post" asp-action="Transaction">
+    <input asp-for="Nuban" hidden />  
+    <input asp-for="AccountName" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class"text-primary">Post Transaction</h2>
+            <hr />
+        </div>
+     
+          <div class="mb-3">
+            <label asp-for="Nuban">Account Number</label>
+            <input asp-for="Nuban" class="form-control" disabled/>
+            <span asp-validation-for="Nuban" class="text-danger"></span>
+        </div>
+ 
+        <div class="mb-3">
+            <label asp-for="AccountName">Account Name</label>
+            <input asp-for="AccountName" class="form-control" disabled/>
+            <span asp-validation-for="AccountName" class="text-danger"></span>
+        </div>
+          <div class="mb-3">
+            <label asp-for="Biller">Select Biller</label>
+            @Html.DropDownListFor(model => model.BillerId, new SelectList(Model.Biller, "Id", "Name"), "Select Biller")
+            <span asp-validation-for="Biller" class="text-danger"></span>
+        </div>
+
+                <!-- Hidden field to store the selected Biller (JSON representation) -->
+        <input asp-for="SelectedBiller" type="hidden" />
+
+         <div class="mb-3">
+            <label asp-for="Products">Select Product</label>
+            @Html.DropDownListFor(model => model.ProductId, new SelectList(Model.Products, "Id", "Name"), "Select Product")
+            <span asp-validation-for="Products" class="text-danger"></span>
+        </div>
+
+        <input asp-for="SelectedProduct" type="hidden" />
+
+                
+            <div id="customFieldsSection" style="display:none;">
+                <div id="customFields"></div>                
+            </div>
+
+        <a href="#" id="validateLink" class="btn btn-primary">Validate</a>
+
+        <div id="hiddenFieldsSection" style="display:none;">
+            <div class="mb-3">
+                <label asp-for="Amount"></label>
+                <input asp-for="Amount" id="amountField" class="form-control"/>
+                <input asp-for="Amount" id="amountHiddenField" class="form-control" type="hidden"/>
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+
+             <div class="mb-3">
+                <label asp-for="Fee"></label>
+                <input asp-for="Fee" id="feeField" class="form-control" disabled/>
+                 <input asp-for="Fee" id="feeHiddenField" class="form-control" type="hidden"/>
+                <span asp-validation-for="Fee" class="text-danger"></span>
+            </div>
+        </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px" id="Post_transaction">Post Transaction</button>
+        @*<a asp-controller="TransactionHistory" asp-action="Retrieve" class="btn btn-primary" style="width:150px">Get Transactions</a>*@
+        @*<a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to Home</a>*@
+
+
+</form>
+
+
+@section Scripts{
+
+    <script>
+
+    $(document).ready(function () {
+
+        // Handle change event of the parent dropdown
+
+        $("#BillerId").change(function () {
+
+            var billerId = $(this).val();
+
+            // Make an AJAX call to fetch child dropdown items based on the selected parent id
+
+            $.ajax({
+
+                url: '@Url.Action("GetBillerProducts", "Home")',
+
+                type: 'GET',
+
+                data: { billerId: billerId },
+
+                success: function (data) {
+
+                    // Update the child dropdown options
+
+                    $("#ProductId").empty();
+
+                    $.each(data, function (index, item) {
+
+                        $("#ProductId").append($('<option>', {
+
+                            value: item.id,
+
+                            text: item.name
+
+                        }));
+
+                    });
+
+
+                addConstantOptionToChildDropdown();
+
+                },
+
+                error: function (error) {
+
+                    console.log(error);
+
+                }
+
+            });
+
+
+        });
+      $('#BillerId').change();
+
+    });
+
+    function addConstantOptionToChildDropdown() {
+        var constantOption = '<option value="1" selected>Select Product</option>';
+        $('#ProductId').prepend(constantOption);
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Define data variable outside the scope of functions
+        var data;
+ 
+        $('#ProductId').change(function () {
+            var productId = $(this).val();
+            // Make AJAX call to fetch custom fields
+            $.ajax({
+              
+                url: '@Url.Action("GetCustomFields", "Home")',
+                type: 'GET',
+                data: { productId: productId },
+                success: function (responseData) {
+                    // Update the custom fields section
+                    $('#customFields').empty();
+                    data = responseData; // Assign the response data to the data variable
+                    $.each(data, function (index, item) {
+                        // Create hidden input directly within the customFields div
+                        $('#customFields').append('<input type="hidden" name="DynamicFields[' + item.name + ']" value="" />');
+                        // Append a div for visual representation (optional)
+                        $('#customFields').append('<div class="mb-3"><label>' + item.name + '</label><input type="text" name="customFieldValues[' + item.name + ']" class="form-control" /></div>');
+                    });
+                    // Show the custom fields section
+                    $('#customFieldsSection').show();
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+ 
+        // Attach form submission logic inside the submit callback
+        $('form').submit(function () {
+            // Check if data is defined
+            if (data) {
+
+                console.log(data)
+                // Set values of hidden inputs directly within the form
+                $.each(data, function (index, item) {
+                    var dynamicFieldValue = $('#customFields input[name="customFieldValues[' + item.name + ']"]').val();
+                    $('input[name="DynamicFields[' + item.name + ']"]').val(dynamicFieldValue);
+                });
+            }
+        });
+    });
+</script>
+
+
+<script>
+        $(document).ready(function () {
+
+            function clearHiddenFields() {             
+                $('#hiddenFieldsSection input[type="text"]').val('');         
+            }
+
+            $('#validateLink').click(function (e) {
+                e.preventDefault(); // Prevent the default link behavior (e.g., navigation)
+ 
+                // Toggle the visibility of the hidden fields section
+                $('#hiddenFieldsSection').show();
+
+                // Make an AJAX request to retrieve custom fields
+                $.ajax({
+                    url: '@Url.Action("GetAmountandFee", "Home")',
+                    type: 'GET',
+                    success: function (data) {
+                        // Populate Amount and Fee fields
+                        $('#amountField').val(data.amount);
+                        $('#amountHiddenField').val(data.amount);
+
+                        if (data.amount !== null && data.amount !== undefined && data.amount !== '') {             
+                            $('#amountField').prop('disabled', true);
+                        }
+                        else
+                        {
+                             $('#amountField').prop('disabled', false);
+                        }
+
+                        $('#feeField').val(data.fee);
+                        $('#feeHiddenField').val(data.fee);
+                        // Populate other fields as needed
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+                return false;
+            });
+
+            // Change event for the parent and child drop-downs        
+            $('#BillerId, #ProductId').change(function () {             
+                // Clear the hidden fields when drop-downs change            
+                clearHiddenFields();         
+            });
+        });
+</script>
+
+<script>
+    // Update the hidden field when the selected value changes
+    $('#BillerId').change(function () {
+        var selectedBillerValue = $(this).val();
+        var selectedBillerText = $('#BillerId option:selected').text();
+ 
+        // Update the hidden field with JSON representation
+        $('input[name="SelectedBiller"]').val(JSON.stringify({ Id: selectedBillerValue, Name: selectedBillerText }));
+ 
+        // Update the displayed name if needed
+        $('#selectedBillerName').text(selectedBillerText);
+    });
+ 
+    // Initialize the selected Biller when the page loads
+    $(document).ready(function () {
+        var selectedBillerValue = $('#BillerId').val();
+        var selectedBillerText = $('#BillerId option:selected').text();
+ 
+        // Set the initial value of the hidden field with JSON representation
+        $('input[name="SelectedBiller"]').val(JSON.stringify({ Id: selectedBillerValue, Name: selectedBillerText }));
+ 
+        // Display the selected Biller's name if needed
+        $('#selectedBillerName').text(selectedBillerText);
+    });
+</script>
+
+<script>
+    // Update the hidden field when the selected value changes
+    $('#ProductId').change(function () {
+        var selectedBillerValue = $(this).val();
+        var selectedBillerText = $('#ProductId option:selected').text();
+ 
+        // Update the hidden field with JSON representation
+        $('input[name="SelectedProduct"]').val(JSON.stringify({ Id: selectedBillerValue, Name: selectedBillerText }));
+ 
+        // Update the displayed name if needed
+        $('#selectedProductName').text(selectedBillerText);
+    });
+ 
+    // Initialize the selected Biller when the page loads
+    $(document).ready(function () {
+        var selectedBillerValue = $('#ProductId').val();
+        var selectedBillerText = $('#ProductId option:selected').text();
+ 
+        // Set the initial value of the hidden field with JSON representation
+        $('input[name="SelectedProduct"]').val(JSON.stringify({ Id: selectedBillerValue, Name: selectedBillerText }));
+ 
+        // Display the selected Biller's name if needed
+        $('#selectedProductName').text(selectedBillerText);
+    });
+</script>
+}
+    
+
+
+

@@ -1,0 +1,80 @@
+﻿@*
+@{
+    ViewData["Title"] = "Print";
+}
+
+<h1>Print</h1>*@
+
+
+@*@model IEnumerable<TransactionHistory>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Transaction History</h1>*@
+
+@model PendingTransaction
+ 
+@*<partial name="_Notification" />*@
+<form method="post" asp-action="Approve">
+    <input asp-for="TransId" hidden />
+    <input asp-for="debitAccountNumber" hidden />  
+    <input asp-for="billerId" hidden />  
+    <input asp-for="billerName" hidden />  
+    <input asp-for="billerProductId" hidden />  
+    <input asp-for="productName" hidden />  
+    <input asp-for="amount" hidden />  
+     
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class"text-primary">Transaction Approval Request</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="TransId"></label>
+            <input asp-for="TransId" class="form-control" disabled />
+            <span asp-validation-for="TransId" class="text-danger"></span>
+        </div>
+          <div class="mb-3">
+            <label asp-for="debitAccountNumber"></label>
+            <input asp-for="debitAccountNumber" class="form-control" disabled />
+            <span asp-validation-for="debitAccountNumber" class="text-danger"></span>
+        </div>
+ 
+        <div class="mb-3">
+            <label asp-for="billerId"></label>
+            <input asp-for="billerId" class="form-control" disabled />
+            <span asp-validation-for="billerId" class="text-danger"></span>
+        </div>
+
+          <div class="mb-3">
+            <label asp-for="billerName"></label>
+            <input asp-for="billerName" class="form-control" disabled />
+            <span asp-validation-for="billerName" class="text-danger"></span>
+        </div>
+
+          <div class="mb-3">
+            <label asp-for="billerProductId"></label>
+            <input asp-for="billerProductId" class="form-control" disabled />
+            <span asp-validation-for="billerProductId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="productName"></label>
+            <input asp-for="productName" class="form-control" disabled />
+            <span asp-validation-for="productName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="amount"></label>
+            <input asp-for="amount" class="form-control" disabled />
+            <span asp-validation-for="amount" class="text-danger"></span>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" style="width:150px">Approve</button>
+        <a asp-controller="PendingTransaction" asp-action="Pending" class="btn btn-secondary" style="width:150px">Back</a>
+
+    </div>
+
+</form>
+
+
+

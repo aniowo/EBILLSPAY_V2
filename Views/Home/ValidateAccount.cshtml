@@ -1,0 +1,21 @@
+﻿@model ValidateAccount
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class"text-primary">Post Transaction</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Nuban">Enter Account Number(NUBAN)</label>
+            <input asp-for="Nuban" class="form-control" />
+            <span asp-validation-for="Nuban" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Validate Account</button>
+
+    </div>
+
+</form>
+

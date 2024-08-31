@@ -1,0 +1,44 @@
+﻿@model TransactionStatus
+
+
+<form method="post" asp-controller="PendingTransaction" asp-action="Print">
+     <input asp-for="Nuban" hidden />  
+    <input asp-for="BillerName" hidden />  
+    <input asp-for="ProductName" hidden />  
+    <input asp-for="Amount" hidden />  
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class"text-primary">TRANSACTION SUCCESSFUL!!</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Nuban">Account Number</label>
+            <input asp-for="Nuban" class="form-control" disabled />
+            <span asp-validation-for="Nuban" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="BillerName">Biller Name</label>
+            <input asp-for="BillerName" class="form-control" disabled />
+            <span asp-validation-for="BillerName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ProductName">Product Name</label>
+            <input asp-for="ProductName" class="form-control" disabled />
+            <span asp-validation-for="ProductName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Amount">Amount</label>
+            <input asp-for="Amount" class="form-control" disabled />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Print Receipt</button>
+        <a asp-controller="Home" asp-action="ValidateAccount" class="btn btn-secondary" style="width:150px">Back to Home</a>
+
+    </div>
+
+</form>
+

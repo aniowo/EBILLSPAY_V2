@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>@ViewData["Title"] - EBILLSPAY_V2</title>
+    <img src="~/images/gtbanklogo.gif" alt="GTLogo" class="my-image" />   
+    <link rel="stylesheet" href="~/css/BootsWatchTheme.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Image.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/CustomBotton.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EBILLSPAY_V2.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+    
+    
+</head>
+<body>
+    <header>
+     
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+             <h2 class="text-white">GTCOLLECTIONS_EBILLLSPAY</h2>
+             <br /><br />
+
+                    @{
+                        int roleId = Convert.ToInt32(ViewBag.RoleId) ?? 0;
+                        int configRoleId = Convert.ToInt32(ViewBag.ConfigRoleId);
+                    }
+
+                    @if(roleId > 0)
+                    {
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarColor01">
+                            <ul class="navbar-nav me-auto">
+                            @if (roleId != configRoleId)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ValidateAccount">Home</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="TransactionHistory" asp-action="Index">Transaction History</a>
+                                </li>
+                            }
+                            
+                            @if (roleId == configRoleId)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="PendingTransaction" asp-action="Index">Approve Transaction</a>
+                                </li>
+                            }
+                            </ul>
+                        </div>
+                    }
+             </div>
+        </nav>
+ 
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">                  
+            <partial name="_Notification" />
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - EBILLSPAY_V2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

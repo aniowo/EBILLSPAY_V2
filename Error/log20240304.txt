@@ -1,0 +1,77 @@
+2024-03-04 18:13:36.142 +01:00 [INF] User profile is available. Using 'C:\Users\chinedu.aniowo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-04 18:13:36.943 +01:00 [INF] Now listening on: https://localhost:7171
+2024-03-04 18:13:36.950 +01:00 [INF] Now listening on: http://localhost:5171
+2024-03-04 18:13:36.964 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 18:13:36.968 +01:00 [INF] Hosting environment: Development
+2024-03-04 18:13:36.971 +01:00 [INF] Content root path: C:\inetpub\wwwroot\Aniowo\EBILLSPAY_V2\
+2024-03-04 18:13:40.366 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/ - -
+2024-03-04 18:13:40.520 +01:00 [INF] Executing endpoint 'EBILLSPAY_V2.Controllers.HomeController.ValidateAccount (EBILLSPAY_V2)'
+2024-03-04 18:13:40.609 +01:00 [INF] Route matched with {action = "ValidateAccount", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ValidateAccount() on controller EBILLSPAY_V2.Controllers.HomeController (EBILLSPAY_V2).
+2024-03-04 18:13:41.214 +01:00 [INF] Accessing expired session, Key:5f791faa-462c-5cdb-f438-04ef675b9780
+2024-03-04 18:13:41.334 +01:00 [INF] Executing ViewResult, running view ValidateAccount.
+2024-03-04 18:13:42.090 +01:00 [INF] Executed ViewResult - view ValidateAccount executed in 766.8708ms.
+2024-03-04 18:13:42.130 +01:00 [INF] Executed action EBILLSPAY_V2.Controllers.HomeController.ValidateAccount (EBILLSPAY_V2) in 1511.3199ms
+2024-03-04 18:13:42.138 +01:00 [INF] Executed endpoint 'EBILLSPAY_V2.Controllers.HomeController.ValidateAccount (EBILLSPAY_V2)'
+2024-03-04 18:13:42.276 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/ - - - 200 - text/html;+charset=utf-8 1916.6634ms
+2024-03-04 18:13:42.393 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/css/CustomBotton.css?v=u1Gs-IH5gMl_8IvYLyQfxPBcLU6bwmgXJFKsx5yQJlI - -
+2024-03-04 18:13:42.395 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/lib/jquery/dist/jquery.min.js - -
+2024-03-04 18:13:42.400 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/_framework/aspnetcore-browser-refresh.js - -
+2024-03-04 18:13:42.394 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/css/BootsWatchTheme.css - -
+2024-03-04 18:13:42.393 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/EBILLSPAY_V2.styles.css?v=-_MPLi0Qr9vXBPcjjcdqO5sWYkFXJoPb-zabrGy-9gw - -
+2024-03-04 18:13:42.393 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/css/site.css?v=9Z8lpzkfCYVW63yPMZU2u8SYPJ-cl0GuppU12bI9JrU - -
+2024-03-04 18:13:42.393 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/css/Image.css?v=00Nu3r5sV-j1PfNBo9TidJ3d-xQXsDxPLkQO2txFelQ - -
+2024-03-04 18:13:42.430 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - -
+2024-03-04 18:13:42.464 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/_vs/browserLink - -
+2024-03-04 18:13:42.490 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 89.5075ms
+2024-03-04 18:13:42.504 +01:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2024-03-04 18:13:42.504 +01:00 [INF] The file /css/BootsWatchTheme.css was not modified
+2024-03-04 18:13:42.571 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 175.3142ms
+2024-03-04 18:13:42.505 +01:00 [INF] The file /EBILLSPAY_V2.styles.css was not modified
+2024-03-04 18:13:42.597 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/css/BootsWatchTheme.css - - - 304 - text/css 202.9769ms
+2024-03-04 18:13:42.624 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/EBILLSPAY_V2.styles.css?v=-_MPLi0Qr9vXBPcjjcdqO5sWYkFXJoPb-zabrGy-9gw - - - 304 - text/css 230.7286ms
+2024-03-04 18:13:42.504 +01:00 [INF] The file /css/CustomBotton.css was not modified
+2024-03-04 18:13:42.504 +01:00 [INF] The file /css/site.css was not modified
+2024-03-04 18:13:42.504 +01:00 [INF] The file /css/Image.css was not modified
+2024-03-04 18:13:42.504 +01:00 [INF] The file /js/site.js was not modified
+2024-03-04 18:13:42.648 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 184.8151ms
+2024-03-04 18:13:42.665 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/css/CustomBotton.css?v=u1Gs-IH5gMl_8IvYLyQfxPBcLU6bwmgXJFKsx5yQJlI - - - 304 - text/css 271.7481ms
+2024-03-04 18:13:42.694 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/css/site.css?v=9Z8lpzkfCYVW63yPMZU2u8SYPJ-cl0GuppU12bI9JrU - - - 304 - text/css 301.3720ms
+2024-03-04 18:13:42.719 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/css/Image.css?v=00Nu3r5sV-j1PfNBo9TidJ3d-xQXsDxPLkQO2txFelQ - - - 304 - text/css 326.5489ms
+2024-03-04 18:13:42.735 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - - - 304 - application/javascript 305.6965ms
+2024-03-04 18:13:43.453 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/favicon.ico - -
+2024-03-04 18:13:43.463 +01:00 [INF] The file /favicon.ico was not modified
+2024-03-04 18:13:43.468 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/favicon.ico - - - 304 - image/x-icon 14.9733ms
+2024-03-04 18:14:07.392 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7171/ application/x-www-form-urlencoded 199
+2024-03-04 18:14:07.398 +01:00 [INF] Executing endpoint 'EBILLSPAY_V2.Controllers.HomeController.ValidateAccount (EBILLSPAY_V2)'
+2024-03-04 18:14:07.418 +01:00 [INF] Route matched with {action = "ValidateAccount", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ValidateAccount(EBILLSPAY_V2.Models.ValidateAccount) on controller EBILLSPAY_V2.Controllers.HomeController (EBILLSPAY_V2).
+2024-03-04 18:14:07.595 +01:00 [INF] Accessing expired session, Key:5f791faa-462c-5cdb-f438-04ef675b9780
+2024-03-04 18:14:09.176 +01:00 [INF] Entered the GetAccessToken Method
+2024-03-04 18:14:09.277 +01:00 [INF] About to retrieve PublicKey using GetPublicKey
+2024-03-04 18:14:10.478 +01:00 [INF] About to Call Ebills's REST API for Request: {"AlwaysMultipartFormData":false,"MultipartFormQuoteParameters":false,"MultipartFormQuoteBoundary":true,"FormBoundary":null,"Parameters":[{"Name":"Channel","Value":"PM","Type":2,"Encode":false,"ContentType":{"Value":"text/plain","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"text/plain"}},{"DataFormat":0,"ContentEncoding":null,"Name":"","Value":{"username":"6FsVIHyisuD9z+ZhKXDy6Bdzk8kjOyPMzjIJ0vo1yM/bJiD8aRLBlnMFASyXBOpQpieQksOCtgaTUq0icj7zbKZW8nnx1XvGRbPu0xGNWhmlCMwYpOln4aSO7bZppkejhX8luP2wn0FIPP1kAql1aH/S22bhR3XI2CTYbpGwoRg=","password":"DyCNR42GbP1DQ7qu4xZAoMxpVjJzuw3WG/6aPDl+Ne0SWMH3A6Pl6Z2Jfdhs8rpBCHAZUm6YSXDDkr/0p5CFmHtVxRi4D1/NeW5xFDI/vtenNHgPzdonJmDpwFg25IraNzr5n20wu6Nat5taHm/fPlLxPRsi+1A7yMa4J8lLh64="},"Type":3,"Encode":false,"ContentType":{"Value":"application/json","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"application/json"}}],"CookieContainer":null,"Authenticator":null,"Files":[],"Method":1,"Timeout":0,"Resource":"GetAccessToken","RequestFormat":0,"RootElement":null,"OnBeforeDeserialization":null,"OnBeforeRequest":null,"OnAfterRequest":null,"Attempts":0,"CompletionOption":0,"CachePolicy":null,"ResponseWriter":null,"AdvancedResponseWriter":null}
+2024-03-04 18:14:16.118 +01:00 [INF] {"Request":{"AlwaysMultipartFormData":false,"MultipartFormQuoteParameters":false,"MultipartFormQuoteBoundary":true,"FormBoundary":null,"Parameters":[{"Name":"Channel","Value":"PM","Type":2,"Encode":false,"ContentType":{"Value":"text/plain","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"text/plain"}},{"DataFormat":0,"ContentEncoding":null,"Name":"","Value":{"username":"6FsVIHyisuD9z+ZhKXDy6Bdzk8kjOyPMzjIJ0vo1yM/bJiD8aRLBlnMFASyXBOpQpieQksOCtgaTUq0icj7zbKZW8nnx1XvGRbPu0xGNWhmlCMwYpOln4aSO7bZppkejhX8luP2wn0FIPP1kAql1aH/S22bhR3XI2CTYbpGwoRg=","password":"DyCNR42GbP1DQ7qu4xZAoMxpVjJzuw3WG/6aPDl+Ne0SWMH3A6Pl6Z2Jfdhs8rpBCHAZUm6YSXDDkr/0p5CFmHtVxRi4D1/NeW5xFDI/vtenNHgPzdonJmDpwFg25IraNzr5n20wu6Nat5taHm/fPlLxPRsi+1A7yMa4J8lLh64="},"Type":3,"Encode":false,"ContentType":{"Value":"application/json","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"application/json"}}],"CookieContainer":{"Capacity":300,"Count":0,"MaxCookieSize":4096,"PerDomainCapacity":20},"Authenticator":null,"Files":[],"Method":1,"Timeout":0,"Resource":"GetAccessToken","RequestFormat":0,"RootElement":null,"OnBeforeDeserialization":null,"OnBeforeRequest":null,"OnAfterRequest":null,"Attempts":1,"CompletionOption":0,"CachePolicy":null,"ResponseWriter":null,"AdvancedResponseWriter":null},"ContentType":"application/json","ContentLength":365,"ContentEncoding":[],"Content":"{\"TokenResponse\":{\"TokenType\":\"Bearer\",\"ExpiresIn\":\"30 minutes\",\"ExpiryDate\":\"2024-03-04T00:00:00Z\",\"Token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkJlYXJlciJ9.eyJ1bmlxdWVfbmFtZSI6IlBNIiwibmJmIjoxNzA5NTcyNDU1LCJleHAiOjE3MDk1NzQyNTUsImlhdCI6MTcwOTU3MjQ1NX0.PMNyWVFSA5nxWjA8Z-XtM7dPhAz_YZs0RGMamgnF37M\"},\"ResponseCode\":\"00\",\"ResponseDescription\":\"token generated successfully\"}","StatusCode":200,"IsSuccessStatusCode":true,"IsSuccessful":true,"StatusDescription":"OK","RawBytes":"eyJUb2tlblJlc3BvbnNlIjp7IlRva2VuVHlwZSI6IkJlYXJlciIsIkV4cGlyZXNJbiI6IjMwIG1pbnV0ZXMiLCJFeHBpcnlEYXRlIjoiMjAyNC0wMy0wNFQwMDowMDowMFoiLCJUb2tlbiI6ImV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa0psWVhKbGNpSjkuZXlKMWJtbHhkV1ZmYm1GdFpTSTZJbEJOSWl3aWJtSm1Jam94TnpBNU5UY3lORFUxTENKbGVIQWlPakUzTURrMU56UXlOVFVzSW1saGRDSTZNVGN3T1RVM01qUTFOWDAuUE1OeVdWRlNBNW54V2pBOFotWHRNN2RQaEF6X1laczBSR01hbWduRjM3TSJ9LCJSZXNwb25zZUNvZGUiOiIwMCIsIlJlc3BvbnNlRGVzY3JpcHRpb24iOiJ0b2tlbiBnZW5lcmF0ZWQgc3VjY2Vzc2Z1bGx5In0=","ResponseUri":"https://gtapitest.gtbank.com/WebApis/EbillsPaytransfer/Api/GetAccessToken","Server":"Microsoft-IIS/10.0","Cookies":[],"Headers":[{"Name":"Server","Value":"Microsoft-IIS/10.0","Type":2,"Encode":false,"ContentType":{"Value":"text/plain","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"text/plain"}},{"Name":"X-Powered-By","Value":"ASP.NET","Type":2,"Encode":false,"ContentType":{"Value":"text/plain","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"text/plain"}},{"Name":"Date","Value":"Mon, 04 Mar 2024 17:14:15 GMT","Type":2,"Encode":false,"ContentType":{"Value":"text/plain","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"text/plain"}}],"ContentHeaders":[{"Name":"Content-Length","Value":"365","Type":2,"Encode":false,"ContentType":{"Value":"text/plain","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"text/plain"}},{"Name":"Content-Type","Value":"application/json; charset=utf-8","Type":2,"Encode":false,"ContentType":{"Value":"text/plain","AsMediaTypeHeaderValue":{"CharSet":null,"Parameters":[],"MediaType":"text/plain"}}],"ResponseStatus":1,"ErrorMessage":null,"ErrorException":null,"Version":"1.1","RootElement":null}
+2024-03-04 18:14:16.290 +01:00 [INF] Call to EBills GetTokenAPI Successful
+2024-03-04 18:14:18.283 +01:00 [INF] Response code EbillsPay Request GetBillers method: OK
+2024-03-04 18:14:18.414 +01:00 [INF] Executing RedirectResult, redirecting to /Home/transaction.
+2024-03-04 18:14:18.424 +01:00 [INF] Executed action EBILLSPAY_V2.Controllers.HomeController.ValidateAccount (EBILLSPAY_V2) in 10990.993ms
+2024-03-04 18:14:18.427 +01:00 [INF] Executed endpoint 'EBILLSPAY_V2.Controllers.HomeController.ValidateAccount (EBILLSPAY_V2)'
+2024-03-04 18:14:18.443 +01:00 [INF] Session started; Key:5f791faa-462c-5cdb-f438-04ef675b9780, Id:879b7fc1-b11b-d52a-54f4-01dfa1521bd4
+2024-03-04 18:14:18.453 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7171/ application/x-www-form-urlencoded 199 - 302 0 - 11060.7674ms
+2024-03-04 18:14:18.481 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/Home/transaction - -
+2024-03-04 18:14:18.488 +01:00 [INF] Executing endpoint 'EBILLSPAY_V2.Controllers.HomeController.Transaction (EBILLSPAY_V2)'
+2024-03-04 18:14:18.494 +01:00 [INF] Route matched with {action = "Transaction", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Transaction() on controller EBILLSPAY_V2.Controllers.HomeController (EBILLSPAY_V2).
+2024-03-04 18:14:18.812 +01:00 [INF] Executing ViewResult, running view Transaction.
+2024-03-04 18:14:18.917 +01:00 [INF] Executed ViewResult - view Transaction executed in 105.5114ms.
+2024-03-04 18:14:18.920 +01:00 [INF] Executed action EBILLSPAY_V2.Controllers.HomeController.Transaction (EBILLSPAY_V2) in 415.571ms
+2024-03-04 18:14:18.932 +01:00 [INF] Executed endpoint 'EBILLSPAY_V2.Controllers.HomeController.Transaction (EBILLSPAY_V2)'
+2024-03-04 18:14:18.945 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/Home/transaction - - - 200 - text/html;+charset=utf-8 464.9734ms
+2024-03-04 18:14:19.092 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/_framework/aspnetcore-browser-refresh.js - -
+2024-03-04 18:14:19.095 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 3.7049ms
+2024-03-04 18:14:19.105 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/_vs/browserLink - -
+2024-03-04 18:14:19.182 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7171/Home/GetBillerProducts?billerId= - -
+2024-03-04 18:14:19.197 +01:00 [INF] Executing endpoint 'EBILLSPAY_V2.Controllers.HomeController.GetBillerProducts (EBILLSPAY_V2)'
+2024-03-04 18:14:19.215 +01:00 [INF] Route matched with {action = "GetBillerProducts", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBillerProducts(System.String) on controller EBILLSPAY_V2.Controllers.HomeController (EBILLSPAY_V2).
+2024-03-04 18:14:19.232 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 127.1665ms
+2024-03-04 18:14:19.241 +01:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[EBILLSPAY_V2.Models.GetBillerProducts, EBILLSPAY_V2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-04 18:14:19.286 +01:00 [INF] Executed action EBILLSPAY_V2.Controllers.HomeController.GetBillerProducts (EBILLSPAY_V2) in 61.6775ms
+2024-03-04 18:14:19.291 +01:00 [INF] Executed endpoint 'EBILLSPAY_V2.Controllers.HomeController.GetBillerProducts (EBILLSPAY_V2)'
+2024-03-04 18:14:19.313 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7171/Home/GetBillerProducts?billerId= - - - 200 - application/json;+charset=utf-8 131.3257ms

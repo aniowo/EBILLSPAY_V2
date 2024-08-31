@@ -1,0 +1,30 @@
+﻿@model GetTransaction
+ 
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class"text-primary">Get Transaction History</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Nuban">Enter Account Number(NUBAN)</label>
+            <input asp-for="Nuban" class="form-control" />
+            <span asp-validation-for="Nuban" class="text-danger"></span>
+        </div>
+          <div class="mb-3">
+            <label asp-for="StartDate">Start Date</label>
+            <input type="date" asp-for="StartDate" class="form-control" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+          <div class="mb-3">
+            <label asp-for="EndDate">End Date</label>
+            <input type ="date" asp-for="EndDate" class="form-control" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Get Transactions</button>
+        <a asp-controller="Home" asp-action="ValidateAccount" class="btn btn-secondary" style="width:150px">Back to Home</a>
+
+    </div>
+
+</form>
+

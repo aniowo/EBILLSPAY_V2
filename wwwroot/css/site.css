@@ -1,0 +1,71 @@
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    
+}
+
+.navpills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #ff6a00;
+    background-color: #ff6a00;
+    border-color: #ff6a00;
+}
+
+.navbar {
+    margin-right: 64px;
+    background-color: #cc5533;
+}
+
+/*blended-image {s
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    right: 0px;
+    width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+.blended-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.blended-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    pointer-events: none;*/ /* Allows clicking through the overlay to the elements below */
+/*}*/
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.border-top {
+    border-top: 1px solid #ff6a00;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ff6a00;
+}
+
+

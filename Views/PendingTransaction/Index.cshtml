@@ -1,0 +1,23 @@
+﻿@model RetrieveTransaction
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class"text-primary">Retrieve Pending Transaction</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="BranchCode">Enter Branch Code</label>
+            <input asp-for="BranchCode" class="form-control" />
+            <span asp-validation-for="BranchCode" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Pending Transactions</button>
+
+
+    </div>
+
+</form>
+
+
